@@ -1,4 +1,4 @@
-html{
+.index-bg{
     background: url(/img/2.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6,8 +6,8 @@ html{
   background-size: cover;
 }
 
-h1{
-    color: #888;
+.index-header{
+    color: #fff;
     text-align: center;
 }
 .joke-btn{
@@ -78,3 +78,83 @@ h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: large;
   }
+
+  .country-bg{
+    background: url(/img/globe-2.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .country-header{
+    position: relative;
+    color: rgba(49,150,159,255);
+    left: 850px;
+    top: 200px;
+    
+  }
+
+  .country-textbox{
+    
+  
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom: 2px solid #1c87c9;
+    background-color:rgba(78,236,250,255);
+    height: 25px;
+    width: 300px;
+    font-size: 15px;
+    color: grey;
+  
+  }
+  label{
+    padding-bottom: 0.2cm;
+    padding-top: 0.2cm;
+    display: block;
+    font-size: 0.5cm;
+  }
+
+  .country-btn{
+    color: rgba(49,150,159,255);
+    width: 100px;
+    height: 45px;
+    font-size: 20px;
+    margin-top: 10px
+
+  }
+  .checkbox-style{
+    display: block;
+    
+  }
+
+  .navbar{
+    height: 12%;
+    display: flex;
+    align-items: center;
+  }
+
+  nav{
+    flex:1;
+    text-align: right;
+    margin-right: 40px;
+  }
+  nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+  }
+
+
+
+  nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+
+  }
+
+  nav ul li a:hover{
+    font-size: 18px;
+  }
+  

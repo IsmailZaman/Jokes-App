@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="index-bg">
+<html lang="en" class="country-bg">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href='/css/styles.css'>
-    
+    <link rel="stylesheet" href='/css/styles.css'>
+    <title>Country Search</title>
 </head>
-<body>
+
+<body> 
+
     <div class="navbar">
         <nav>
             <ul>
@@ -22,13 +24,18 @@
 
         </nav>
     </div>
-    <h1 class="index-header">Welcome to the Joke Site</h1>
-    <button class="joke-btn">Generate a joke</button>
-    <p id='setup'></p>
-    <p id='punchline'></p>
-    <div id='spinner-div'></div>
-    <button class="next-joke-btn">Not to your liking? Try another one!</button>
+    
+    <div class="country-header">
+        <h1>Welcome to the Country Search</h1>
+        <h2>Search a Country by its name</h2>
+        <label>Country Name</label>
+        <input type="text" class="country-textbox">
+        <label>The country name is complete</label>
+        <input type="checkbox" class="checkbox-style">
+        <button class="country-btn">Search</button>
+    </div>
 
-    <script src="/js/script.js"></script>
+    <script src="/js/country-api/country-api.js"></script>
 </body>
+
 </html>

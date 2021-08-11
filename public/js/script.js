@@ -1,64 +1,88 @@
 const button = document.querySelector('button');
-const punchline_elem = document.querySelector('#punchline');
-const setup_elem = document.querySelector('#setup');
-const spinner = document.querySelector('#spinner-div');
-const jokeBtn = document.querySelector('.next-joke-btn');
+const spinner = document.querySelector('.spinner-div');
+const subheading = document.querySelector('.heading-sub');
+const punchline = document.querySelector('.punchline');
+let firstTime = true;
 
-function toggleJokeBtn(){
-    if(jokeBtn.style.visibility ==='hidden'){
-        jokeBtn.style.visibility = 'visible';
+button.addEventListener('click',()=>{
+    if(firstTime){
+        toggleButtonVisibility();
+        firstTime= false;
+        spinner.classList.toggle('spinner');
     }
     else{
-        jokeBtn.style.visibility = 'hidden';
+        removeJoke();
+        toggleButtonVisibility();
+        spinner.classList.toggle('spinner');
+
+    }
+    displayJoke();
+
+})
+
+function removeJoke(){
+    subheading.style.display = "none"
+    punchline.style.display = "none";
+    subheading.textContent="";
+    punchline.textContent ="";
+    
+}
+
+
+function toggleButtonVisibility(){
+   
+    if(button.textContent === "Generate a Joke"){
+        button.textContent = "Not to your liking?  Give it another try";
+    }
+
+    if(button.style.display ==="none"){
+        button.style.display = "inline-block";
+    }
+    else{
+        button.style.display = "none";
     }
 }
 
-toggleJokeBtn();
+
+
+function displaySetupLine(setup){
+    subheading.style.display = "block";
+    subheading.textContent= setup;
+}
+
+function displayPunchline(line){
+    setTimeout(()=>{
+        punchline.style.display = "block";
+        punchline.classList.add('punchline-display');
+        punchline.textContent = line;
+        toggleButtonVisibility();
+
+    },2000);
+    
+}
+
 
 
 function displayJoke(){
-
-    const url = "/joke";
+    const url = '/joke';
     fetch(url).then((response)=>{
         response.json().then((data)=>{
-
             if(data.error){
                 spinner.classList.toggle('spinner');
-                setup_elem.textContent = data.error;
+                subheading.textContent= data.error;
             }
             else{
                 spinner.classList.toggle('spinner');
-                setup_elem.textContent = data.setup;
-                setTimeout(()=>{
-                    punchline_elem.textContent=data.punchline;
-                    toggleJokeBtn();
-                },2000);
-                
+                displaySetupLine(data.setup);
+                displayPunchline(data.punchline);
             }
-            
+
+
         })
-    });
+    })
+
+
+
 }
 
-function clearJoke(){
-    setup_elem.textContent = '';
-    punchline_elem.textContent = '';
-}
 
-button.addEventListener('click',(e)=>{
-    button.remove();
-    spinner.classList.toggle('spinner');
-    displayJoke();
-
-
-})
-
-jokeBtn.addEventListener('click',()=>{
-    toggleJokeBtn();
-    clearJoke();
-    spinner.classList.toggle('spinner');
-    displayJoke();
-
-
-    
-})

@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Have a laugh</title>
     <link rel="stylesheet" href='/css/styles.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <div class="navbar">
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Jokes API</a>
-                </li>
-                <li>
-                    <a href="/country">Country Search API</a>
-                </li>
-            </ul>
 
-        </nav>
+    <div class="header">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Jokes API</a>
+                    </li>
+                    <li>
+                        <a href="/country">Country Search API</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+      
+      <div class="text-box">
+          <h1 class="heading-main">
+              <span class="heading-primary">
+                 the joke site
+              </span>
+
+              <span class="heading-sub">
+                  This is Where the fun happens
+              </span>
+
+          </h1>
+         
+          <span class="punchline"></span>
+           <button class="btn">Generate a Joke</button>
+          <div class="spinner-div"></div>
+
+
+      </div>
     </div>
-    <h1 class="index-header">Welcome to the Joke Site</h1>
-    <button class="joke-btn">Generate a joke</button>
-    <p id='setup'></p>
-    <p id='punchline'></p>
-    <div id='spinner-div'></div>
-    <button class="next-joke-btn">Not to your liking? Try another one!</button>
-
+    
     <script src="/js/script.js"></script>
 </body>
 </html>

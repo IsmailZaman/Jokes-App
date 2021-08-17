@@ -95,6 +95,9 @@ a{
 
  .btn{
   display: inline-block;
+  border: none;
+  background: none;
+  padding: 0;
   padding: 10px 40px;
   background-color: white;
   color: #777;
